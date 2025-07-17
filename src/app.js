@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 app.use(cors({
-    origin: ["http://localhost:5173","https://chadcam-frontend-3jz8ktqes-ankitspandey36s-projects.vercel.app"],
+    origin: ["http://localhost:5173","https://chadcam-frontend-ankitspandey36s-projects.vercel.app"],
     credentials: true
 }))
 
