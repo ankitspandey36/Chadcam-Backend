@@ -116,7 +116,7 @@ const login = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
-        sameSite: "Lax"
+        sameSite: "None"
     }
 
     user.isOnline = true;
@@ -132,7 +132,7 @@ const logout = asyncHandler(async (req, res) => {
     const options = {
         httpOnly: true,
         secure: true,
-        sameSite: "Lax"
+        sameSite: "None"
     }
     res.clearCookie("accessToken", options)
         .clearCookie("refreshToken", options)
@@ -155,7 +155,8 @@ const refresh = asyncHandler(async (req, res) => {
 
     const option = {
         httpOnly: true,
-        secure: true, sameSite: "Lax"
+        secure: true,
+        sameSite: "None"
     }
 
     return res.status(200).cookie("accessToken", accessToken, option).cookie("refreshToken", refreshToken, option).json(new apiResponse(200, { accessToken, refreshToken }, "acces token refreshed"))
