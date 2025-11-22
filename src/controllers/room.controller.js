@@ -31,6 +31,7 @@ const joinRoom = asyncHandler(async (req, res) => {
 
         if (!preferredRoom) {
             const hmsRoom = await createHMSRoom();
+            log(hmsRoom)
             const hmsRoomId = hmsRoom.id;
             const role = "participants";
             const roomCode = await getRoomCode({ room_id: hmsRoomId, role });
