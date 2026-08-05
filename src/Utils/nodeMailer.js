@@ -10,6 +10,7 @@ const transporter = nodemailer.createTransport({
         user: "chadcam132@gmail.com",
         pass: process.env.GMAIL_PASS,
     },
+    logger:true
 });
 
 export default transporter
